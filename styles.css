@@ -1,39 +1,46 @@
 body {
     background-color: #000;
-    color: #0f0;
+    color: #d100d1; /* Neon pinkish-purple */
     font-family: 'Press Start 2P', cursive;
-    text-shadow: 0 0 10px #0f0;
+    text-shadow: 0 0 10px #d100d1; /* Neon pinkish-purple shadow */
 }
 
 button {
     background-color: #000;
-    color: #0f0;
-    border: 2px solid #0f0;
+    color: #d100d1; /* Neon pinkish-purple */
+    border: 2px solid #d100d1; /* Neon pinkish-purple border */
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    text-shadow: 0 0 10px #0f0;
+    text-shadow: 0 0 10px #d100d1; /* Neon pinkish-purple shadow */
 }
 
 button:hover {
-    background-color: #0f0;
+    background-color: #d100d1; /* Neon pinkish-purple */
     color: #000;
 }
 
 button:active {
-    background-color: #00ff00;
+    background-color: #ff00ff; /* Brighter pinkish-purple */
     color: #000;
 }
 
 #timer-display {
     font-size: 3em;
-    text-shadow: 0 0 20px #0f0;
+    text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
 }
 
 #score-display {
     font-size: 2em;
-    text-shadow: 0 0 20px #0f0;
+    text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
+}
+
+@media (max-height: 500px) {
+    /* Styles for when the iframe's height is 500px or less */
+    #timer-display, #score-display {
+        font-size: 1.5em;
+    }
 }
