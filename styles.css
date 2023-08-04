@@ -1,5 +1,5 @@
 body {
-    background-color: #000;
+    background-color: transparent; /* Transparent background */
     color: #d100d1; /* Neon pinkish-purple */
     font-family: 'Press Start 2P', cursive;
     text-shadow: 0 0 10px #d100d1; /* Neon pinkish-purple shadow */
