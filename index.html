@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <h1 id="timer-display">25:00</h1>
-    <button id="start-button"><i class="fas fa-play"></i></button>
-    <button id="stop-button"><i class="fas fa-pause"></i></button>
-    <button id="reset-button"><i class="fas fa-redo"></i></button>    
+    <div id="button-container">
+        <button id="start-button"><i class="fas fa-play"></i> Start</button>
+        <button id="stop-button"><i class="fas fa-pause"></i> Pause</button>
+        <button id="reset-button"><i class="fas fa-redo"></i> Reset</button>
+    </div>
     <h2>Your Score</h2>
     <h1 id="score-display">0</h1>
     <script src="app.js"></script>
