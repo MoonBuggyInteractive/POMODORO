@@ -29,15 +29,6 @@ function startTimer() {
     timerInterval = setInterval(function() {
         timeRemaining -= 0.1;
 
-        // Update the timer display
-        var minutes = Math.floor(timeRemaining / 60);
-        var seconds = Math.floor(timeRemaining % 60);
-        timerDisplay.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-
-        // Add 1 point to the score every 100 milliseconds
-        score += 1;
-        scoreDisplay.textContent = score;
-
         // If the time is up, reset the timer
         if (timeRemaining <= 0) {
             clearInterval(timerInterval);
@@ -47,6 +38,16 @@ function startTimer() {
             // Save the score to localStorage
             localStorage.setItem('score', score);
         }
+
+        // Update the timer display
+        var minutes = Math.floor(timeRemaining / 60);
+        var seconds = Math.floor(timeRemaining % 60);
+        timerDisplay.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+
+        // Add 1 point to the score every 100 milliseconds
+        score += 1;
+        scoreDisplay.textContent = score;
+
     }, 100);
 }
 
@@ -58,7 +59,7 @@ function pauseTimer() {
     }
 }
 
-// Function to reset the time and score
+// Function to reset the time
 function resetTimer() {
     if (timerInterval !== null) {
         clearInterval(timerInterval);
@@ -66,8 +67,5 @@ function resetTimer() {
     }
     timeRemaining = 25 * 60;
     timerDisplay.textContent = '25:00';
-    scoreDisplay.textContent = '0';
-
-    // Save the score to localStorage
-    localStorage.setItem('score', score);
+    // The score is not reset here, as per your earlier request
 }
