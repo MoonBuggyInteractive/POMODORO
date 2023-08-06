@@ -35,20 +35,14 @@ button:active {
     color: #000;
 }
 
-#timer-display {
-    font-size: 3em;
-    text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
-}
-
-#score-display {
-    font-size: 2em;
-    text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
-}
-
 .progress-container {
     position: relative;
     width: 200px; /* Adjust as needed */
     height: 200px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .circular-progress {
@@ -58,9 +52,30 @@ button:active {
     width: 100%;
     height: 100%;
     transform: rotate(-90deg); /* Start the progress from the top */
+    z-index: 1; /* Place the progress bar below the content */
 }
 
 .progress-path {
     stroke-dashoffset: 283; /* This value is 2 * π * 45 (radius of the circle) */
     transition: stroke-dashoffset 0.1s linear;
+}
+
+#timer-display {
+    font-size: 3em;
+    text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
+    z-index: 2; /* Make sure the text appears on top of the progress bar */
+}
+
+/* Buttons container */
+div:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 2; /* Make sure the buttons appear on top of the progress bar */
+}
+
+#score-display {
+    font-size: 2em;
+    text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
+    z-index: 2; /* Make sure the text appears on top of the progress bar */
 }
