@@ -1,8 +1,8 @@
 body {
-    background-color: transparent; /* Transparent background */
-    color: #d100d1; /* Neon pinkish-purple */
+    background-color: transparent;
+    color: #d100d1;
     font-family: 'Press Start 2P', cursive;
-    text-shadow: 0 0 10px #d100d1; /* Neon pinkish-purple shadow */
+    text-shadow: 0 0 10px #d100d1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,32 +11,13 @@ body {
     padding: 0;
 }
 
-button {
-    background-color: #000;
-    color: #d100d1; /* Neon pinkish-purple */
-    border: 2px solid #d100d1; /* Neon pinkish-purple */
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-shadow: 0 0 10px #d100d1; /* Neon pinkish-purple shadow */
-}
-
-button:hover {
-    background-color: #d100d1; /* Neon pinkish-purple */
-    color: #000;
-}
-
-button:active {
-    background-color: #ff00ff; /* Brighter pink for active state */
-    color: #000;
-}
-
 .progress-container {
     position: relative;
-    width: 200px; /* Adjust as needed */
-    height: 200px; /* Adjust as needed */
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .circular-progress {
@@ -45,43 +26,56 @@ button:active {
     left: 0;
     width: 100%;
     height: 100%;
-    transform: rotate(-90deg); /* Start the progress from the top */
-    z-index: 1; /* Place the progress bar below the content */
+    z-index: 1;
 }
 
-.progress-path {
-    stroke-dashoffset: 283; /* This value is 2 * π * 45 (radius of the circle) */
-    transition: stroke-dashoffset 0.1s linear;
+#timer-display, #score-display, div:nth-of-type(2) {
+    position: absolute;
+    z-index: 2;
 }
 
 #timer-display {
-    font-size: 3em;
-    text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
-    z-index: 2; /* Make sure the text appears on top of the progress bar */
-    position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -60%); /* Center the element */
+    transform: translateX(-50%);
+    font-size: 3em;
+    text-shadow: 0 0 20px #d100d1;
 }
 
 #score-display {
-    font-size: 2em;
-    text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
-    z-index: 2; /* Make sure the text appears on top of the progress bar */
-    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -20%); /* Position below the timer */
+    transform: translateX(-50%);
+    font-size: 2em;
+    text-shadow: 0 0 20px #d100d1;
 }
 
-/* Buttons container */
 div:nth-of-type(2) {
-    position: absolute;
-    bottom: 10px;
+    bottom: 10%;
     left: 50%;
-    transform: translateX(-50%); /* Center the buttons horizontally */
+    transform: translateX(-50%);
     display: flex;
-    justify-content: center;
     gap: 10px;
-    z-index: 2; /* Make sure the buttons appear on top of the progress bar */
+}
+
+button {
+    background-color: #000;
+    color: #d100d1;
+    border: 2px solid #d100d1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-shadow: 0 0 10px #d100d1;
+}
+
+button:hover {
+    background-color: #d100d1;
+    color: #000;
+}
+
+button:active {
+    background-color: #ff00ff;
+    color: #000;
 }
