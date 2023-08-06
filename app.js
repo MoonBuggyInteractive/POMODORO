@@ -4,6 +4,8 @@ var scoreDisplay = document.getElementById('score-display');
 var startButton = document.getElementById('start-button');
 var pauseButton = document.getElementById('stop-button');
 var resetButton = document.getElementById('reset-button');
+var progressPath = document.querySelector('.progress-path');
+
 
 // Initialize state
 var score = 0;
@@ -48,7 +50,13 @@ function startTimer() {
         score += 1;
         scoreDisplay.textContent = score;
 
+            // Update the circular progress bar
+        var progress = (25 * 60 - timeRemaining) / (25 * 60); // This calculates the percentage of the time elapsed
+        var offset = 283 - (progress * 283); // This calculates the stroke offset based on the percentage
+        progressPath.style.strokeDashoffset = offset;
+
     }, 100);
+    
 }
 
 // Function to pause the timer
@@ -58,6 +66,8 @@ function pauseTimer() {
         timerInterval = null;
     }
 }
+
+
 
 // Function to reset the time
 function resetTimer() {
