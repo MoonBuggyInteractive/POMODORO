@@ -4,7 +4,6 @@ body {
     font-family: 'Press Start 2P', cursive;
     text-shadow: 0 0 10px #d100d1; /* Neon pinkish-purple shadow */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -17,7 +16,6 @@ button {
     color: #d100d1; /* Neon pinkish-purple */
     border: 2px solid #d100d1; /* Neon pinkish-purple */
     padding: 10px 20px;
-    margin: 10px;
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
@@ -39,10 +37,6 @@ button:active {
     position: relative;
     width: 200px; /* Adjust as needed */
     height: 200px; /* Adjust as needed */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .circular-progress {
@@ -64,18 +58,30 @@ button:active {
     font-size: 3em;
     text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
     z-index: 2; /* Make sure the text appears on top of the progress bar */
-}
-
-/* Buttons container */
-div:nth-of-type(2) {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    z-index: 2; /* Make sure the buttons appear on top of the progress bar */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%); /* Center the element */
 }
 
 #score-display {
     font-size: 2em;
     text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
     z-index: 2; /* Make sure the text appears on top of the progress bar */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%); /* Position below the timer */
+}
+
+/* Buttons container */
+div:nth-of-type(2) {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the buttons horizontally */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 2; /* Make sure the buttons appear on top of the progress bar */
 }
