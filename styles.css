@@ -12,17 +12,10 @@ body {
     padding: 0;
 }
 
-#button-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-
 button {
     background-color: #000;
     color: #d100d1; /* Neon pinkish-purple */
-    border: 2px solid #d100d1; /* Neon pinkish-purple border */
+    border: 2px solid #d100d1; /* Neon pinkish-purple */
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
@@ -38,7 +31,7 @@ button:hover {
 }
 
 button:active {
-    background-color: #ff00ff; /* Brighter pinkish-purple */
+    background-color: #ff00ff; /* Brighter pink for active state */
     color: #000;
 }
 
@@ -51,6 +44,7 @@ button:active {
     font-size: 2em;
     text-shadow: 0 0 20px #d100d1; /* Neon pinkish-purple shadow */
 }
+
 .progress-container {
     position: relative;
     width: 200px; /* Adjust as needed */
@@ -69,13 +63,4 @@ button:active {
 .progress-path {
     stroke-dashoffset: 283; /* This value is 2 * π * 45 (radius of the circle) */
     transition: stroke-dashoffset 0.1s linear;
-}
-
-
-
-@media (max-height: 500px) {
-    /* Styles for when the iframe's height is 500px or less */
-    #timer-display, #score-display {
-        font-size: 1.5em;
-    }
 }
