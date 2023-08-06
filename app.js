@@ -4,8 +4,9 @@ var scoreDisplay = document.getElementById('score-display');
 var startButton = document.getElementById('start-button');
 var pauseButton = document.getElementById('stop-button');
 var resetButton = document.getElementById('reset-button');
-var progressPath = document.querySelector('.progress-path');
 
+// DOM element for the progress path
+var progressPath = document.querySelector('.progress-path');
 
 // Initialize state
 var score = 0;
@@ -31,15 +32,10 @@ function startTimer() {
     timerInterval = setInterval(function() {
         timeRemaining -= 0.1;
 
-        // If the time is up, reset the timer
-        if (timeRemaining <= 0) {
-            clearInterval(timerInterval);
-            timerInterval = null;
-            timeRemaining = 25 * 60;
-
-            // Save the score to localStorage
-            localStorage.setItem('score', score);
-        }
+        // Update the circular progress bar
+        var progress = (25 * 60 - timeRemaining) / (25 * 60); // This calculates the percentage of the time elapsed
+        var offset = 283 - (progress * 283); // This calculates the stroke offset based on the percentage
+        progressPath.style.strokeDashoffset = offset;
 
         // Update the timer display
         var minutes = Math.floor(timeRemaining / 60);
@@ -50,13 +46,17 @@ function startTimer() {
         score += 1;
         scoreDisplay.textContent = score;
 
-            // Update the circular progress bar
-        var progress = (25 * 60 - timeRemaining) / (25 * 60); // This calculates the percentage of the time elapsed
-        var offset = 283 - (progress * 283); // This calculates the stroke offset based on the percentage
-        progressPath.style.strokeDashoffset = offset;
+        // If the time is up, reset the timer
+        if (timeRemaining <= 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            timeRemaining = 25 * 60;
+
+            // Save the score to localStorage
+            localStorage.setItem('score', score);
+        }
 
     }, 100);
-    
 }
 
 // Function to pause the timer
@@ -67,8 +67,6 @@ function pauseTimer() {
     }
 }
 
-
-
 // Function to reset the time
 function resetTimer() {
     if (timerInterval !== null) {
@@ -77,5 +75,7 @@ function resetTimer() {
     }
     timeRemaining = 25 * 60;
     timerDisplay.textContent = '25:00';
+    // Reset the circular progress bar
+    progressPath.style.strokeDashoffset = 283;
     // The score is not reset here, as per your earlier request
 }
