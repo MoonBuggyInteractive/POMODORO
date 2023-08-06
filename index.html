@@ -1,30 +1,38 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Pomodoro App</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1 id="timer-display">25:00</h1>
-    <div id="button-container">
-        <button id="start-button"><i class="fas fa-play"></i> </button>
-        <button id="stop-button"><i class="fas fa-pause"></i> </button>
-        <button id="reset-button"><i class="fas fa-redo"></i> </button>
-    </div>
-    <h2>Your Score</h2>
-    <h1 id="score-display">0</h1>
-    <script src="app.js"></script>
-    <div class="progress-container">
-    <svg class="circular-progress" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="45" fill="none" stroke-width="5" stroke="#d100d1" opacity="0.2"></circle>
-        <circle class="progress-path" cx="50" cy="50" r="45" fill="none" stroke-width="5" stroke="#d100d1" stroke-dasharray="283"></circle>
-    </svg>
-    <!-- Your other elements (like the timer and buttons) go here. -->
-</div>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="progress-container">
+        <svg class="circular-progress" viewBox="0 0 100 100">
+            <!-- Background Circle -->
+            <circle cx="50" cy="50" r="45" fill="none" stroke-width="5" stroke="#d100d1" opacity="0.2"></circle>
+            <!-- Animated Progress Circle -->
+            <circle class="progress-path" cx="50" cy="50" r="45" fill="none" stroke-width="5" stroke="#d100d1" stroke-dasharray="283"></circle>
+        </svg>
+        <!-- Timer Display -->
+        <div id="timer-display">25:00</div>
+    </div>
+
+    <!-- Buttons -->
+    <div>
+        <button id="start-button">Start</button>
+        <button id="stop-button">Pause</button>
+        <button id="reset-button">Reset</button>
+    </div>
+
+    <!-- Score Display -->
+    <div id="score-display">0</div>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
