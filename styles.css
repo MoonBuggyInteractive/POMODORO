@@ -29,33 +29,34 @@ body {
     z-index: 1;
 }
 
-#timer-display, #score-display, div:nth-of-type(2) {
-    position: absolute;
-    z-index: 2;
-}
-
 #timer-display {
-    top: 25%;
+    position: absolute;
+    top: 40%; /* Adjust to position the timer in the center */
     left: 50%;
     transform: translateX(-50%);
     font-size: 3em;
     text-shadow: 0 0 20px #d100d1;
+    z-index: 2;
 }
 
 #score-display {
-    top: 50%;
+    position: absolute;
+    top: 60%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 2em;
     text-shadow: 0 0 20px #d100d1;
+    z-index: 2;
 }
 
 div:nth-of-type(2) {
-    bottom: 10%;
+    position: absolute;
+    bottom: 15%; /* Adjust to position the buttons inside the circle */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    z-index: 2;
 }
 
 button {
